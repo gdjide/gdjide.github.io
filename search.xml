@@ -12,26 +12,22 @@
       </tags>
   </entry>
   <entry>
-    <title>CCleaner系统清理软件</title>
-    <url>/2024/11/15/Software/Software/</url>
-    <content><![CDATA[<p>CCleaner是一款非常实用的系统清理软件，可以帮助用户清理系统中的无用文件和注册表信息，提高系统的运行速度和稳定性。</p>
-<p><strong>它的强大功能在于能够清除上网记录，对注册表进行垃圾项扫描和清理。</strong></p>
-<p>博主主要用来清理无效的注册表信息，希望能为你带来帮助。</p>
-<p>请支持正版：<a href="https://www.ccleaner.com/">https://www.ccleaner.com/</a><br><img src="https://pic-bed-6vd.pages.dev/img/CClean.png" alt="CClean图片加载失败"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
-<p>修改版本：</p>
-<p>修改说明</p>
-<p>基于官方专业版修改，集成注册密钥许可证，启动即为已注册专业版！绿色便携，设置保存CCleaner.ini，需保存注册表删CCleaner.ini即可；</p>
-<p>强改目录免uninst.exe程序可正常使用监控功能，32位和64位均已处理；原版如果当前目录无该程序，监控功能就会无法使用，相关选项也是灰色；</p>
-<p>完整修订简体中文语言，采用官方简体中文语言模块本地化，无需外置语言模块；预先优化设置：默认最小化系统托盘，不启动主动监控、系统监控、浏览器监控等；</p>
-<p>取消官方默认规则勾选清理IE&#x2F;Edge&#x2F;谷歌&#x2F;火狐等浏览器Cookies的钩子避免误清理；去界面右上角梨子图标和手型连接，去下方在线帮助、在线升级连接图标等多余内容；</p>
-<p>删除多国语言模块，删除在线升级程序，单文件版自动识别32位和64位，可保存设置；增强版规则采用最新规则，增强清理优化效率</p>
-<p>免费开源的CCleaner第三方应用程序扫描清理规则的订阅地址）</p>
-<p><a href="https://jsd.admincdn.com/gh/MoscaDotTo/Winapp2@master/Winapp2.ini">https://jsd.admincdn.com/gh/MoscaDotTo/Winapp2@master/Winapp2.ini</a></p>
-<p><a href="https://github.com/moscadotto/winapp2">https://github.com/moscadotto/winapp2</a></p>
-<p>下载链接：<br>城通网盘：<a href="https://url94.ctfile.com/d/17401394-33015849-41e0ff%EF%BC%88%E8%AE%BF%E9%97%AE%E5%AF%86%E7%A0%81%EF%BC%9AYPOJIE%EF%BC%89">https://url94.ctfile.com/d/17401394-33015849-41e0ff（访问密码：YPOJIE）</a></p>
-<p>夸克网盘：<a href="https://pan.quark.cn/s/9f9a9611b264">https://pan.quark.cn/s/9f9a9611b264</a></p>
-<p>UC网盘：<a href="https://fast.uc.cn/s/938ab0fd27304">https://fast.uc.cn/s/938ab0fd27304</a></p>
-<p>百度网盘：<a href="https://pan.baidu.com/s/1c8zEDIKmMu76E7tsrikPgw">https://pan.baidu.com/s/1c8zEDIKmMu76E7tsrikPgw</a> 提取码: vihx</p>
+    <title>Centos7的详细网络配置</title>
+    <url>/2024/11/15/Test/AboutCentosNetwork/</url>
+    <content><![CDATA[<h2 id="第一种连接模式：桥接模式（操作简单）"><a href="#第一种连接模式：桥接模式（操作简单）" class="headerlink" title="第一种连接模式：桥接模式（操作简单）"></a>第一种连接模式：桥接模式（操作简单）</h2><h3 id="1-在虚拟机开机前进行设置"><a href="#1-在虚拟机开机前进行设置" class="headerlink" title="1. 在虚拟机开机前进行设置"></a>1. 在虚拟机开机前进行设置</h3><p>在虚拟机设置中<span style="color: red;">网络适配器</span>下选择桥接模式，选中<span style="color: red;">复制物理网络连接状态</span>。<br><img src="https://pic-bed-6vd.pages.dev/img/net1.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="2-也可在虚拟机开机后进行设置"><a href="#2-也可在虚拟机开机后进行设置" class="headerlink" title="2. 也可在虚拟机开机后进行设置"></a>2. 也可在虚拟机开机后进行设置</h3><p>有时候在开机前设置完之后打开虚拟机网络又会变成NAT模式，很奇怪，所以可以在<br>开机后重新设置一下网络。<br><em>虚拟机右下角也可以找到网络设置</em><br><img src="https://pic-bed-6vd.pages.dev/img/net2.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br>选择桥接模式即可。</p>
+<h2 id="第二种连接模式：NAT模式（较复杂）"><a href="#第二种连接模式：NAT模式（较复杂）" class="headerlink" title="第二种连接模式：NAT模式（较复杂）"></a>第二种连接模式：NAT模式（较复杂）</h2><p>在运行虚拟机之后，打开虚拟机网络编辑器。<br><img src="https://pic-bed-6vd.pages.dev/img/net2.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br>选择<span style="color: red;">VMnet8</span>网络，没有的话创建一个。<br><img src="https://pic-bed-6vd.pages.dev/img/net3.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br><img src="https://pic-bed-6vd.pages.dev/img/net4.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br><img src="https://pic-bed-6vd.pages.dev/img/net5.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br><img src="https://pic-bed-6vd.pages.dev/img/net6.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br><img src="https://pic-bed-6vd.pages.dev/img/net7.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br>在虚拟机中输入</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br></pre></td></tr></table></figure>
+<p>进去后按 i 进入编辑模式<br>将BOOTPROTO&#x3D;dhcp 更改为   BOOTPROTO&#x3D;static<br>  ONBOOT&#x3D;no      更改为   ONBOOT&#x3D;yes</p>
+<p>添加以下内容</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">IPADDR=192.168.100.1 与虚拟机在相同网段</span><br><span class="line">NETMASK=255.255.255.0 固定值</span><br><span class="line">GATEWAY=192.168.100.2 必须与前面的“网关IP”相同</span><br><span class="line">DNS1=114.114.114.114</span><br><span class="line">DNS2=8.8.8.8</span><br></pre></td></tr></table></figure>
+<p>按Esc键退出编辑模式，输入 :wq 保存退出。<br><img src="https://pic-bed-6vd.pages.dev/img/net8.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br>重启网络服务</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl restart network</span><br></pre></td></tr></table></figure>
+<p>查看网络状态，查看IP地址</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ip addr</span><br></pre></td></tr></table></figure>
+<p>可以ping一下百度看看网络连接有无成功</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ping www.baidu.com</span><br><span class="line"></span><br><span class="line">使用ctrl + z 退出ping</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic-bed-6vd.pages.dev/img/net9.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
 <script src="https://giscus.app/client.js"
         data-repo="gdjide/TheDiscussions"
         data-repo-id="R_kgDONP3u_g"
@@ -49,10 +45,13 @@
         async>
 </script>]]></content>
       <categories>
-        <category>软件分享</category>
+        <category>测试</category>
+        <category>环境搭建</category>
       </categories>
       <tags>
-        <tag>软件分享</tag>
+        <tag>Centos7</tag>
+        <tag>测试</tag>
+        <tag>环境搭建</tag>
       </tags>
   </entry>
   <entry>
@@ -94,22 +93,26 @@
       </tags>
   </entry>
   <entry>
-    <title>Centos7的详细网络配置</title>
-    <url>/2024/11/15/Test/AboutCentosNetwork/</url>
-    <content><![CDATA[<h2 id="第一种连接模式：桥接模式（操作简单）"><a href="#第一种连接模式：桥接模式（操作简单）" class="headerlink" title="第一种连接模式：桥接模式（操作简单）"></a>第一种连接模式：桥接模式（操作简单）</h2><h3 id="1-在虚拟机开机前进行设置"><a href="#1-在虚拟机开机前进行设置" class="headerlink" title="1. 在虚拟机开机前进行设置"></a>1. 在虚拟机开机前进行设置</h3><p>在虚拟机设置中<span style="color: red;">网络适配器</span>下选择桥接模式，选中<span style="color: red;">复制物理网络连接状态</span>。<br><img src="https://pic-bed-6vd.pages.dev/img/net1.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
-<h3 id="2-也可在虚拟机开机后进行设置"><a href="#2-也可在虚拟机开机后进行设置" class="headerlink" title="2. 也可在虚拟机开机后进行设置"></a>2. 也可在虚拟机开机后进行设置</h3><p>有时候在开机前设置完之后打开虚拟机网络又会变成NAT模式，很奇怪，所以可以在<br>开机后重新设置一下网络。<br><em>虚拟机右下角也可以找到网络设置</em><br><img src="https://pic-bed-6vd.pages.dev/img/net2.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br>选择桥接模式即可。</p>
-<h2 id="第二种连接模式：NAT模式（较复杂）"><a href="#第二种连接模式：NAT模式（较复杂）" class="headerlink" title="第二种连接模式：NAT模式（较复杂）"></a>第二种连接模式：NAT模式（较复杂）</h2><p>在运行虚拟机之后，打开虚拟机网络编辑器。<br><img src="https://pic-bed-6vd.pages.dev/img/net2.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br>选择<span style="color: red;">VMnet8</span>网络，没有的话创建一个。<br><img src="https://pic-bed-6vd.pages.dev/img/net3.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br><img src="https://pic-bed-6vd.pages.dev/img/net4.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br><img src="https://pic-bed-6vd.pages.dev/img/net5.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br><img src="https://pic-bed-6vd.pages.dev/img/net6.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br><img src="https://pic-bed-6vd.pages.dev/img/net7.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br>在虚拟机中输入</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br></pre></td></tr></table></figure>
-<p>进去后按 i 进入编辑模式<br>将BOOTPROTO&#x3D;dhcp 更改为   BOOTPROTO&#x3D;static<br>  ONBOOT&#x3D;no      更改为   ONBOOT&#x3D;yes</p>
-<p>添加以下内容</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">IPADDR=192.168.100.1 与虚拟机在相同网段</span><br><span class="line">NETMASK=255.255.255.0 固定值</span><br><span class="line">GATEWAY=192.168.100.2 必须与前面的“网关IP”相同</span><br><span class="line">DNS1=114.114.114.114</span><br><span class="line">DNS2=8.8.8.8</span><br></pre></td></tr></table></figure>
-<p>按Esc键退出编辑模式，输入 :wq 保存退出。<br><img src="https://pic-bed-6vd.pages.dev/img/net8.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br>重启网络服务</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl restart network</span><br></pre></td></tr></table></figure>
-<p>查看网络状态，查看IP地址</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ip addr</span><br></pre></td></tr></table></figure>
-<p>可以ping一下百度看看网络连接有无成功</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ping www.baidu.com</span><br><span class="line"></span><br><span class="line">使用ctrl + z 退出ping</span><br></pre></td></tr></table></figure>
-<p><img src="https://pic-bed-6vd.pages.dev/img/net9.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+    <title>CCleaner系统清理软件</title>
+    <url>/2024/11/15/Software/Software/</url>
+    <content><![CDATA[<p>CCleaner是一款非常实用的系统清理软件，可以帮助用户清理系统中的无用文件和注册表信息，提高系统的运行速度和稳定性。</p>
+<p><strong>它的强大功能在于能够清除上网记录，对注册表进行垃圾项扫描和清理。</strong></p>
+<p>博主主要用来清理无效的注册表信息，希望能为你带来帮助。</p>
+<p>请支持正版：<a href="https://www.ccleaner.com/">https://www.ccleaner.com/</a><br><img src="https://pic-bed-6vd.pages.dev/img/CClean.png" alt="CClean图片加载失败"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>修改版本：</p>
+<p>修改说明</p>
+<p>基于官方专业版修改，集成注册密钥许可证，启动即为已注册专业版！绿色便携，设置保存CCleaner.ini，需保存注册表删CCleaner.ini即可；</p>
+<p>强改目录免uninst.exe程序可正常使用监控功能，32位和64位均已处理；原版如果当前目录无该程序，监控功能就会无法使用，相关选项也是灰色；</p>
+<p>完整修订简体中文语言，采用官方简体中文语言模块本地化，无需外置语言模块；预先优化设置：默认最小化系统托盘，不启动主动监控、系统监控、浏览器监控等；</p>
+<p>取消官方默认规则勾选清理IE&#x2F;Edge&#x2F;谷歌&#x2F;火狐等浏览器Cookies的钩子避免误清理；去界面右上角梨子图标和手型连接，去下方在线帮助、在线升级连接图标等多余内容；</p>
+<p>删除多国语言模块，删除在线升级程序，单文件版自动识别32位和64位，可保存设置；增强版规则采用最新规则，增强清理优化效率</p>
+<p>免费开源的CCleaner第三方应用程序扫描清理规则的订阅地址）</p>
+<p><a href="https://jsd.admincdn.com/gh/MoscaDotTo/Winapp2@master/Winapp2.ini">https://jsd.admincdn.com/gh/MoscaDotTo/Winapp2@master/Winapp2.ini</a></p>
+<p><a href="https://github.com/moscadotto/winapp2">https://github.com/moscadotto/winapp2</a></p>
+<p>下载链接：<br>城通网盘：<a href="https://url94.ctfile.com/d/17401394-33015849-41e0ff%EF%BC%88%E8%AE%BF%E9%97%AE%E5%AF%86%E7%A0%81%EF%BC%9AYPOJIE%EF%BC%89">https://url94.ctfile.com/d/17401394-33015849-41e0ff（访问密码：YPOJIE）</a></p>
+<p>夸克网盘：<a href="https://pan.quark.cn/s/9f9a9611b264">https://pan.quark.cn/s/9f9a9611b264</a></p>
+<p>UC网盘：<a href="https://fast.uc.cn/s/938ab0fd27304">https://fast.uc.cn/s/938ab0fd27304</a></p>
+<p>百度网盘：<a href="https://pan.baidu.com/s/1c8zEDIKmMu76E7tsrikPgw">https://pan.baidu.com/s/1c8zEDIKmMu76E7tsrikPgw</a> 提取码: vihx</p>
 <script src="https://giscus.app/client.js"
         data-repo="gdjide/TheDiscussions"
         data-repo-id="R_kgDONP3u_g"
@@ -127,13 +130,10 @@
         async>
 </script>]]></content>
       <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
+        <category>软件分享</category>
       </categories>
       <tags>
-        <tag>Centos7</tag>
-        <tag>测试</tag>
-        <tag>环境搭建</tag>
+        <tag>软件分享</tag>
       </tags>
   </entry>
 </search>
