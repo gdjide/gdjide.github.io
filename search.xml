@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>编程</title>
+    <url>/2024/11/15/Programming/Programming/</url>
+    <content><![CDATA[<h1 id="暂未书写…"><a href="#暂未书写…" class="headerlink" title="暂未书写…"></a>暂未书写…</h1>]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CCleaner系统清理软件</title>
     <url>/2024/11/15/Software/Software/</url>
     <content><![CDATA[<p>CCleaner是一款非常实用的系统清理软件，可以帮助用户清理系统中的无用文件和注册表信息，提高系统的运行速度和稳定性。</p>
@@ -40,14 +51,47 @@
       <categories>
         <category>软件分享</category>
       </categories>
+      <tags>
+        <tag>软件分享</tag>
+      </tags>
   </entry>
   <entry>
-    <title>编程</title>
-    <url>/2024/11/15/Programming/Programming/</url>
-    <content><![CDATA[<h1 id="暂未书写…"><a href="#暂未书写…" class="headerlink" title="暂未书写…"></a>暂未书写…</h1>]]></content>
+    <title>Centos7的yum换源</title>
+    <url>/2024/11/13/Test/AboutCentos/</url>
+    <content><![CDATA[<p>由于Centos7在2024年06月30日停止维护，所以最初的yum源已经失效，需要更换为国内的yum源。<br>以下为个人总结后的步骤：</p>
+<ol>
+<li>进入yum源目录<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd /etc/yum.repos.d/</span><br></pre></td></tr></table></figure></li>
+<li>备份原有的yum源(将CentOS-Base.repo重命名为CentOS-Base.repo.bak)<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mv CentOS-Base.repo CentOS-Base.repo.bak</span><br></pre></td></tr></table></figure></li>
+<li>下载国内的yum源(这里的为阿里云源)<br>在下载前先确定网络能够正常访问，否则会下载失败。<br>网络有关内容可以参考<a href="AboutCentosNetwork.md">网络配置</a><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget -O CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或者</span></span><br><span class="line">curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br></pre></td></tr></table></figure></li>
+<li>清除yum缓存<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum clean all</span><br></pre></td></tr></table></figure></li>
+<li>生成新的yum缓存<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum makecache</span><br></pre></td></tr></table></figure></li>
+<li>查看yum源是否更换成功<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum repolist</span><br></pre></td></tr></table></figure></li>
+</ol>
+<script src="https://giscus.app/client.js"
+        data-repo="gdjide/TheDiscussions"
+        data-repo-id="R_kgDONP3u_g"
+        data-category="Announcements"
+        data-category-id="DIC_kwDONP3u_s4CkTPz"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="transparent_dark"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>]]></content>
       <categories>
-        <category>编程</category>
+        <category>测试</category>
+        <category>环境搭建</category>
       </categories>
+      <tags>
+        <tag>Centos7</tag>
+        <tag>测试</tag>
+        <tag>环境搭建</tag>
+      </tags>
   </entry>
   <entry>
     <title>Centos7的详细网络配置</title>
@@ -86,38 +130,10 @@
         <category>测试</category>
         <category>环境搭建</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Centos7的yum换源</title>
-    <url>/2024/11/13/Test/AboutCentos/</url>
-    <content><![CDATA[<p>由于Centos7在2024年06月30日停止维护，所以最初的yum源已经失效，需要更换为国内的yum源。<br>以下为个人总结后的步骤：</p>
-<ol>
-<li>进入yum源目录<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd /etc/yum.repos.d/</span><br></pre></td></tr></table></figure></li>
-<li>备份原有的yum源(将CentOS-Base.repo重命名为CentOS-Base.repo.bak)<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mv CentOS-Base.repo CentOS-Base.repo.bak</span><br></pre></td></tr></table></figure></li>
-<li>下载国内的yum源(这里的为阿里云源)<br>在下载前先确定网络能够正常访问，否则会下载失败。<br>网络有关内容可以参考<a href="AboutCentosNetwork.md">网络配置</a><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget -O CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或者</span></span><br><span class="line">curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br></pre></td></tr></table></figure></li>
-<li>清除yum缓存<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum clean all</span><br></pre></td></tr></table></figure></li>
-<li>生成新的yum缓存<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum makecache</span><br></pre></td></tr></table></figure></li>
-<li>查看yum源是否更换成功<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum repolist</span><br></pre></td></tr></table></figure></li>
-</ol>
-<script src="https://giscus.app/client.js"
-        data-repo="gdjide/TheDiscussions"
-        data-repo-id="R_kgDONP3u_g"
-        data-category="Announcements"
-        data-category-id="DIC_kwDONP3u_s4CkTPz"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="transparent_dark"
-        data-lang="zh-CN"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
-      </categories>
+      <tags>
+        <tag>Centos7</tag>
+        <tag>测试</tag>
+        <tag>环境搭建</tag>
+      </tags>
   </entry>
 </search>
