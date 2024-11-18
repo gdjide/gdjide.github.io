@@ -7,9 +7,6 @@
       <categories>
         <category>编程</category>
       </categories>
-      <tags>
-        <tag>编程</tag>
-      </tags>
   </entry>
   <entry>
     <title>CCleaner系统清理软件</title>
@@ -51,9 +48,6 @@
       <categories>
         <category>软件分享</category>
       </categories>
-      <tags>
-        <tag>软件分享</tag>
-      </tags>
   </entry>
   <entry>
     <title>Centos7的yum换源</title>
@@ -87,11 +81,6 @@
         <category>测试</category>
         <category>环境搭建</category>
       </categories>
-      <tags>
-        <tag>Linux系统</tag>
-        <tag>测试</tag>
-        <tag>环境搭建</tag>
-      </tags>
   </entry>
   <entry>
     <title>Centos7的详细网络配置</title>
@@ -130,10 +119,5 @@
         <category>测试</category>
         <category>环境搭建</category>
       </categories>
-      <tags>
-        <tag>Linux系统</tag>
-        <tag>测试</tag>
-        <tag>环境搭建</tag>
-      </tags>
   </entry>
 </search>
