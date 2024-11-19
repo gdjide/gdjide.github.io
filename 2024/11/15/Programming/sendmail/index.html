@@ -7,22 +7,20 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="CCleaner是一款非常实用的系统清理软件，可以帮助用户清理系统中的无用文件和注册表信息，提高系统的运行速度和稳定性。 它的强大功能在于能够清除上网记录，对注册表进行垃圾项扫描和清理。 博主主要用来清理无效的注册表信息，希望能为你带来帮助。 请支持正版：https:&#x2F;&#x2F;www.ccleaner.com&#x2F; 修改版本： 修改说明 基于官方专业版修改，集成注册密钥许可证，启动即为已注册专业版！绿色便携">
+<meta name="description" content="python代码实现邮件的发送1. 邮件发送的原理邮件发送的原理是：邮件发送者将邮件发送到邮件服务器，邮件服务器再将邮件转发到邮件接收者。 2. 邮件发送的步骤 邮件发送者将邮件发送到邮件服务器。 邮件服务器将邮件转发到邮件接收者。  3. 邮件发送的代码实现1234567891011121314151617181920212223242526272829303132333435363738394">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CCleaner系统清理软件">
-<meta property="og:url" content="https://gdjide.github.io/2024/11/15/Software/Software/index.html">
+<meta property="og:title" content="python代码实现邮件的发送">
+<meta property="og:url" content="https://gdjide.github.io/2024/11/15/Programming/sendmail/index.html">
 <meta property="og:site_name" content="jideblog">
-<meta property="og:description" content="CCleaner是一款非常实用的系统清理软件，可以帮助用户清理系统中的无用文件和注册表信息，提高系统的运行速度和稳定性。 它的强大功能在于能够清除上网记录，对注册表进行垃圾项扫描和清理。 博主主要用来清理无效的注册表信息，希望能为你带来帮助。 请支持正版：https:&#x2F;&#x2F;www.ccleaner.com&#x2F; 修改版本： 修改说明 基于官方专业版修改，集成注册密钥许可证，启动即为已注册专业版！绿色便携">
+<meta property="og:description" content="python代码实现邮件的发送1. 邮件发送的原理邮件发送的原理是：邮件发送者将邮件发送到邮件服务器，邮件服务器再将邮件转发到邮件接收者。 2. 邮件发送的步骤 邮件发送者将邮件发送到邮件服务器。 邮件服务器将邮件转发到邮件接收者。  3. 邮件发送的代码实现1234567891011121314151617181920212223242526272829303132333435363738394">
 <meta property="og:locale">
-<meta property="og:image" content="https://gdjide.github.io/img/404.jpg">
-<meta property="article:published_time" content="2024-11-15T06:32:11.089Z">
-<meta property="article:modified_time" content="2024-11-18T12:31:57.469Z">
+<meta property="article:published_time" content="2024-11-15T06:33:50.220Z">
+<meta property="article:modified_time" content="2024-11-19T07:36:28.920Z">
 <meta property="article:author" content="jide">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gdjide.github.io/img/404.jpg">
 
 
-<title >CCleaner系统清理软件</title>
+<title >python代码实现邮件的发送</title>
 
 <!-- Favicon -->
 
@@ -65,7 +63,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"gdjide.github.io","author":"jide","root":"/","typed_text":["兴趣使然的"],"theme_version":"2.2.4","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"log.svg","icon16":"log.svg","icon32":"log.svg","apple_touch_icon":"log.svg","webmanifest":"/site.webmanifest","visibilitychange":true,"hidden":"log.svg","show_text":"╰(*°▽°*)╯睡醒了！","hide_text":"(●—●)不看我了是吧，我直接睡觉！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://npm.elemecdn.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":false,"title":"mac","height_limit":200},"toc":{"post_title":true},"live_time":{"start_time":"2024/11/12 13:00:00","prefix":"冒烟运行 undefined 天"},"danmu":{"enable":false,"el":".trm-banner"},"covers":["https://pic-bed-6vd.pages.dev/img/fm1.webp","https://pic-bed-6vd.pages.dev/img/fm2.webp","https://pic-bed-6vd.pages.dev/img/fm3.webp","https://pic-bed-6vd.pages.dev/img/fm4.webp","https://pic-bed-6vd.pages.dev/img/fm5.webp","https://pic-bed-6vd.pages.dev/img/fm6.webp","https://pic-bed-6vd.pages.dev/img/fm7.webp","https://pic-bed-6vd.pages.dev/img/fm8.webp","https://pic-bed-6vd.pages.dev/img/fm9.webp"],"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.xml"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-11-18 20:31:57"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-11-19 15:36:28"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.4" id="trm-switch-style">
@@ -229,7 +227,7 @@
     <div class="trm-banner">
     
     <!-- banner cover -->
-    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="https://pic-bed-6vd.pages.dev/img/bg8.webp">
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="https://pic-bed-6vd.pages.dev/img/bg12.webp">
     <!-- banner cover end -->
     
 
@@ -246,7 +244,7 @@
                             
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            CCleaner系统清理软件
+                            python代码实现邮件的发送
                         </h1>
 
                         
@@ -293,7 +291,7 @@
     <div class="col-sm-4">
         <div class="trm-card trm-label trm-label-light text-center">
             <i class="iconfont far fa-clock trm-icon"></i><br>
-            14:32
+            14:33
         </div>
     </div>
     <div class="col-sm-4">
@@ -305,40 +303,66 @@
 </div>
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
-    <p>CCleaner是一款非常实用的系统清理软件，可以帮助用户清理系统中的无用文件和注册表信息，提高系统的运行速度和稳定性。</p>
-<p><strong>它的强大功能在于能够清除上网记录，对注册表进行垃圾项扫描和清理。</strong></p>
-<p>博主主要用来清理无效的注册表信息，希望能为你带来帮助。</p>
-<p>请支持正版：<a target="_blank" rel="noopener" href="https://www.ccleaner.com/">https://www.ccleaner.com/</a><br><img src="https://pic-bed-6vd.pages.dev/img/CClean.png" alt="CClean图片加载失败"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
-<p>修改版本：</p>
-<p>修改说明</p>
-<p>基于官方专业版修改，集成注册密钥许可证，启动即为已注册专业版！绿色便携，设置保存CCleaner.ini，需保存注册表删CCleaner.ini即可；</p>
-<p>强改目录免uninst.exe程序可正常使用监控功能，32位和64位均已处理；原版如果当前目录无该程序，监控功能就会无法使用，相关选项也是灰色；</p>
-<p>完整修订简体中文语言，采用官方简体中文语言模块本地化，无需外置语言模块；预先优化设置：默认最小化系统托盘，不启动主动监控、系统监控、浏览器监控等；</p>
-<p>取消官方默认规则勾选清理IE&#x2F;Edge&#x2F;谷歌&#x2F;火狐等浏览器Cookies的钩子避免误清理；去界面右上角梨子图标和手型连接，去下方在线帮助、在线升级连接图标等多余内容；</p>
-<p>删除多国语言模块，删除在线升级程序，单文件版自动识别32位和64位，可保存设置；增强版规则采用最新规则，增强清理优化效率</p>
-<p>免费开源的CCleaner第三方应用程序扫描清理规则的订阅地址）</p>
-<p><a target="_blank" rel="noopener" href="https://jsd.admincdn.com/gh/MoscaDotTo/Winapp2@master/Winapp2.ini">https://jsd.admincdn.com/gh/MoscaDotTo/Winapp2@master/Winapp2.ini</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/moscadotto/winapp2">https://github.com/moscadotto/winapp2</a></p>
-<p>下载链接：<br>城通网盘：<a target="_blank" rel="noopener" href="https://url94.ctfile.com/d/17401394-33015849-41e0ff%EF%BC%88%E8%AE%BF%E9%97%AE%E5%AF%86%E7%A0%81%EF%BC%9AYPOJIE%EF%BC%89">https://url94.ctfile.com/d/17401394-33015849-41e0ff（访问密码：YPOJIE）</a></p>
-<p>夸克网盘：<a target="_blank" rel="noopener" href="https://pan.quark.cn/s/9f9a9611b264">https://pan.quark.cn/s/9f9a9611b264</a></p>
-<p>UC网盘：<a target="_blank" rel="noopener" href="https://fast.uc.cn/s/938ab0fd27304">https://fast.uc.cn/s/938ab0fd27304</a></p>
-<p>百度网盘：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1c8zEDIKmMu76E7tsrikPgw">https://pan.baidu.com/s/1c8zEDIKmMu76E7tsrikPgw</a> 提取码: vihx</p>
-<script src="https://giscus.app/client.js"
-        data-repo="gdjide/TheDiscussions"
-        data-repo-id="R_kgDONP3u_g"
-        data-category="Announcements"
-        data-category-id="DIC_kwDONP3u_s4CkTPz"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="transparent_dark"
-        data-lang="zh-CN"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>
+    <h1 id="python代码实现邮件的发送"><a href="#python代码实现邮件的发送" class="headerlink" title="python代码实现邮件的发送"></a>python代码实现邮件的发送</h1><h2 id="1-邮件发送的原理"><a href="#1-邮件发送的原理" class="headerlink" title="1. 邮件发送的原理"></a>1. 邮件发送的原理</h2><p>邮件发送的原理是：邮件发送者将邮件发送到邮件服务器，邮件服务器再将邮件转发到邮件接收者。</p>
+<h2 id="2-邮件发送的步骤"><a href="#2-邮件发送的步骤" class="headerlink" title="2. 邮件发送的步骤"></a>2. 邮件发送的步骤</h2><ol>
+<li>邮件发送者将邮件发送到邮件服务器。</li>
+<li>邮件服务器将邮件转发到邮件接收者。</li>
+</ol>
+<h2 id="3-邮件发送的代码实现"><a href="#3-邮件发送的代码实现" class="headerlink" title="3. 邮件发送的代码实现"></a>3. 邮件发送的代码实现</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> smtplib</span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText</span><br><span class="line"><span class="keyword">from</span> email.header <span class="keyword">import</span> Header</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 邮件发送者的邮箱地址和授权码</span></span><br><span class="line">sender = <span class="string">&#x27;sender@example.com&#x27;</span></span><br><span class="line">password = <span class="string">&#x27;password&#x27;</span> <span class="comment">#填入自己的授权码，注意非邮件密码</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 邮件接收者的邮箱地址</span></span><br><span class="line">receiver = <span class="string">&#x27;receiver@example.com&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 邮件主题</span></span><br><span class="line">subject = <span class="string">&#x27;邮件主题&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 邮件内容</span></span><br><span class="line">content = <span class="string">&#x27;邮件内容&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个MIMEText对象，用于构造邮件内容</span></span><br><span class="line">msg = MIMEText(content, <span class="string">&#x27;plain&#x27;</span>, <span class="string">&#x27;utf-8&#x27;</span>) <span class="comment"># plain:文本类型</span></span><br><span class="line"><span class="comment"># 设置邮件主题</span></span><br><span class="line">msg[<span class="string">&#x27;Subject&#x27;</span>] = Header(subject,<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="comment"># 设置邮件发送者</span></span><br><span class="line">msg[<span class="string">&#x27;From&#x27;</span>] = sender</span><br><span class="line"><span class="comment"># 设置邮件接收者</span></span><br><span class="line">msg[<span class="string">&#x27;To&#x27;</span>] = receiver</span><br><span class="line"></span><br><span class="line"><span class="comment"># 发送邮件</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 连接SMTP服务器</span></span><br><span class="line">    smtpObj = smtplib.SMTP(<span class="string">&#x27;smtp.example.com&#x27;</span>, Port) <span class="comment"># SMTP服务器的地址和端口</span></span><br><span class="line">    smtp.helo(<span class="string">&#x27;smtp.example.com&#x27;</span>) <span class="comment"># 向SMTP服务器标识自己</span></span><br><span class="line">    smtp.ehlo(<span class="string">&#x27;smtp.example.com&#x27;</span>) <span class="comment">#协商更多的SMTP扩展</span></span><br><span class="line">    <span class="comment"># 登录SMTP服务器</span></span><br><span class="line">    smtpObj.login(sender, password)</span><br><span class="line">    <span class="comment"># 发送邮件</span></span><br><span class="line">    smtpObj.sendmail(sender, receiver, msg.as_string())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;邮件发送成功&#x27;</span>)</span><br><span class="line">    <span class="comment"># 关闭SMTP服务器连接</span></span><br><span class="line">    smtpObj.quit()</span><br><span class="line"><span class="keyword">except</span> smtplib.SMTPException <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;邮件发送失败&#x27;</span>, e)</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-一些常见邮箱的参数"><a href="#4-一些常见邮箱的参数" class="headerlink" title="4. 一些常见邮箱的参数"></a>4. 一些常见邮箱的参数</h2><table>
+<thead>
+<tr>
+<th>邮箱</th>
+<th>SMTP服务器地址</th>
+<th>端口</th>
+<th>SSL&#x2F;TLS加密</th>
+<th>STARTTLS加密</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>QQ邮箱</td>
+<td>smtp.qq.com</td>
+<td>465</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>163邮箱</td>
+<td>smtp.163.com</td>
+<td>465</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>Gmail</td>
+<td>smtp.gmail.com</td>
+<td>465</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>Outlook</td>
+<td>smtp.office365.com</td>
+<td>587</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>iCloud</td>
+<td>smtp.mail.me.com</td>
+<td>465</td>
+<td>是</td>
+<td>是</td>
+</tr>
+</tbody></table>
+<h2 id="5-邮件发送的注意事项"><a href="#5-邮件发送的注意事项" class="headerlink" title="5. 邮件发送的注意事项"></a>5. 邮件发送的注意事项</h2><ol>
+<li>邮件发送者的邮箱地址和密码需要正确。</li>
+<li>邮件接收者的邮箱地址需要正确。</li>
+<li>邮件主题和内容需要正确。</li>
+<li>邮件服务器需要正确。</li>
+</ol>
+
 </article>
     
     
@@ -357,17 +381,17 @@
     <div class="trm-older-publications-card trm-scroll-animation trm-active-el">
         <div class="trm-older-publication">
             
-            <a class="trm-op-top trm-anima-link" href="/2024/11/15/Programming/sendmail/">
+            <a class="trm-op-top trm-anima-link" href="/2024/11/15/Test/AboutCentosNetwork/">
                 <span class="trm-op-cover">
-                    <img alt="cover" class="no-fancybox" src="https://pic-bed-6vd.pages.dev/img/fm1.webp">
+                    <img alt="cover" class="no-fancybox" src="https://pic-bed-6vd.pages.dev/img/fm4.webp">
                 </span>
-                <h6 class="trm-op-title">python代码实现邮件的发送</h6>
+                <h6 class="trm-op-title">Centos7的详细网络配置</h6>
             </a>
             <div class="trm-divider trm-mb-15 trm-mt-20"></div>
             <ul class="trm-card-data trm-label">
                 <li>24/11/15</li>
-                <li>14:33</li>
-                <li>学习备忘笔记</li>
+                <li>18:03</li>
+                <li>环境搭建</li>
             </ul>
         </div>
     </div>
@@ -378,17 +402,17 @@
     <div class="trm-older-publications-card trm-scroll-animation trm-active-el">
         <div class="trm-older-publication">
             
-            <a class="trm-op-top trm-anima-link" href="/2024/11/13/Test/AboutCentos/">
+            <a class="trm-op-top trm-anima-link" href="/2024/11/15/Software/Software/">
                 <span class="trm-op-cover">
-                    <img alt="cover" class="no-fancybox" src="https://pic-bed-6vd.pages.dev/img/fm3.webp">
+                    <img alt="cover" class="no-fancybox" src="https://pic-bed-6vd.pages.dev/img/fm2.webp">
                 </span>
-                <h6 class="trm-op-title">Centos7的yum换源</h6>
+                <h6 class="trm-op-title">CCleaner系统清理软件</h6>
             </a>
             <div class="trm-divider trm-mb-15 trm-mt-20"></div>
             <ul class="trm-card-data trm-label">
-                <li>24/11/13</li>
-                <li>21:51</li>
-                <li>环境搭建</li>
+                <li>24/11/15</li>
+                <li>14:32</li>
+                <li>软件分享</li>
             </ul>
         </div>
     </div>
@@ -440,8 +464,24 @@
 
             
 
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="python代码实现邮件的发送"><a rel="nofollow" class="trm-toc-link" href="#python代码实现邮件的发送"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">python代码实现邮件的发送</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="1. 邮件发送的原理"><a rel="nofollow" class="trm-toc-link" href="#1-邮件发送的原理"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">1. 邮件发送的原理</span></a></li><li class="trm-toc-item trm-toc-level-2" title="2. 邮件发送的步骤"><a rel="nofollow" class="trm-toc-link" href="#2-邮件发送的步骤"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">2. 邮件发送的步骤</span></a></li><li class="trm-toc-item trm-toc-level-2" title="3. 邮件发送的代码实现"><a rel="nofollow" class="trm-toc-link" href="#3-邮件发送的代码实现"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">3. 邮件发送的代码实现</span></a></li><li class="trm-toc-item trm-toc-level-2" title="4. 一些常见邮箱的参数"><a rel="nofollow" class="trm-toc-link" href="#4-一些常见邮箱的参数"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">4. 一些常见邮箱的参数</span></a></li><li class="trm-toc-item trm-toc-level-2" title="5. 邮件发送的注意事项"><a rel="nofollow" class="trm-toc-link" href="#5-邮件发送的注意事项"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">5. 邮件发送的注意事项</span></a></li></ol></li></ol>
+      </div>
+    </div>
+
             
 <div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
     
     
         <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">

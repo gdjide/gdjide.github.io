@@ -1,11 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>编程</title>
-    <url>/2024/11/15/Programming/Programming/</url>
-    <content><![CDATA[<h1 id="暂未书写…"><a href="#暂未书写…" class="headerlink" title="暂未书写…"></a>暂未书写…</h1>]]></content>
+    <title>数据库随堂笔记</title>
+    <url>/2024/11/19/Programming/databases/</url>
+    <content><![CDATA[<p> <strong>数据库随堂笔记</strong></p>
+<p><a href="https://pic-bed-6vd.pages.dev/file/SQL.doc">点击查看文件</a></p>
+]]></content>
       <categories>
-        <category>编程</category>
+        <category>学习备忘笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>python代码实现邮件的发送</title>
+    <url>/2024/11/15/Programming/sendmail/</url>
+    <content><![CDATA[<h1 id="python代码实现邮件的发送"><a href="#python代码实现邮件的发送" class="headerlink" title="python代码实现邮件的发送"></a>python代码实现邮件的发送</h1><h2 id="1-邮件发送的原理"><a href="#1-邮件发送的原理" class="headerlink" title="1. 邮件发送的原理"></a>1. 邮件发送的原理</h2><p>邮件发送的原理是：邮件发送者将邮件发送到邮件服务器，邮件服务器再将邮件转发到邮件接收者。</p>
+<h2 id="2-邮件发送的步骤"><a href="#2-邮件发送的步骤" class="headerlink" title="2. 邮件发送的步骤"></a>2. 邮件发送的步骤</h2><ol>
+<li>邮件发送者将邮件发送到邮件服务器。</li>
+<li>邮件服务器将邮件转发到邮件接收者。</li>
+</ol>
+<h2 id="3-邮件发送的代码实现"><a href="#3-邮件发送的代码实现" class="headerlink" title="3. 邮件发送的代码实现"></a>3. 邮件发送的代码实现</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> smtplib</span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText</span><br><span class="line"><span class="keyword">from</span> email.header <span class="keyword">import</span> Header</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 邮件发送者的邮箱地址和授权码</span></span><br><span class="line">sender = <span class="string">&#x27;sender@example.com&#x27;</span></span><br><span class="line">password = <span class="string">&#x27;password&#x27;</span> <span class="comment">#填入自己的授权码，注意非邮件密码</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 邮件接收者的邮箱地址</span></span><br><span class="line">receiver = <span class="string">&#x27;receiver@example.com&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 邮件主题</span></span><br><span class="line">subject = <span class="string">&#x27;邮件主题&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 邮件内容</span></span><br><span class="line">content = <span class="string">&#x27;邮件内容&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个MIMEText对象，用于构造邮件内容</span></span><br><span class="line">msg = MIMEText(content, <span class="string">&#x27;plain&#x27;</span>, <span class="string">&#x27;utf-8&#x27;</span>) <span class="comment"># plain:文本类型</span></span><br><span class="line"><span class="comment"># 设置邮件主题</span></span><br><span class="line">msg[<span class="string">&#x27;Subject&#x27;</span>] = Header(subject,<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="comment"># 设置邮件发送者</span></span><br><span class="line">msg[<span class="string">&#x27;From&#x27;</span>] = sender</span><br><span class="line"><span class="comment"># 设置邮件接收者</span></span><br><span class="line">msg[<span class="string">&#x27;To&#x27;</span>] = receiver</span><br><span class="line"></span><br><span class="line"><span class="comment"># 发送邮件</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 连接SMTP服务器</span></span><br><span class="line">    smtpObj = smtplib.SMTP(<span class="string">&#x27;smtp.example.com&#x27;</span>, Port) <span class="comment"># SMTP服务器的地址和端口</span></span><br><span class="line">    smtp.helo(<span class="string">&#x27;smtp.example.com&#x27;</span>) <span class="comment"># 向SMTP服务器标识自己</span></span><br><span class="line">    smtp.ehlo(<span class="string">&#x27;smtp.example.com&#x27;</span>) <span class="comment">#协商更多的SMTP扩展</span></span><br><span class="line">    <span class="comment"># 登录SMTP服务器</span></span><br><span class="line">    smtpObj.login(sender, password)</span><br><span class="line">    <span class="comment"># 发送邮件</span></span><br><span class="line">    smtpObj.sendmail(sender, receiver, msg.as_string())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;邮件发送成功&#x27;</span>)</span><br><span class="line">    <span class="comment"># 关闭SMTP服务器连接</span></span><br><span class="line">    smtpObj.quit()</span><br><span class="line"><span class="keyword">except</span> smtplib.SMTPException <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;邮件发送失败&#x27;</span>, e)</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-一些常见邮箱的参数"><a href="#4-一些常见邮箱的参数" class="headerlink" title="4. 一些常见邮箱的参数"></a>4. 一些常见邮箱的参数</h2><table>
+<thead>
+<tr>
+<th>邮箱</th>
+<th>SMTP服务器地址</th>
+<th>端口</th>
+<th>SSL&#x2F;TLS加密</th>
+<th>STARTTLS加密</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>QQ邮箱</td>
+<td>smtp.qq.com</td>
+<td>465</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>163邮箱</td>
+<td>smtp.163.com</td>
+<td>465</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>Gmail</td>
+<td>smtp.gmail.com</td>
+<td>465</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>Outlook</td>
+<td>smtp.office365.com</td>
+<td>587</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>iCloud</td>
+<td>smtp.mail.me.com</td>
+<td>465</td>
+<td>是</td>
+<td>是</td>
+</tr>
+</tbody></table>
+<h2 id="5-邮件发送的注意事项"><a href="#5-邮件发送的注意事项" class="headerlink" title="5. 邮件发送的注意事项"></a>5. 邮件发送的注意事项</h2><ol>
+<li>邮件发送者的邮箱地址和密码需要正确。</li>
+<li>邮件接收者的邮箱地址需要正确。</li>
+<li>邮件主题和内容需要正确。</li>
+<li>邮件服务器需要正确。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习备忘笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Centos7的yum换源</title>
+    <url>/2024/11/13/Test/AboutCentos/</url>
+    <content><![CDATA[<p>由于Centos7在2024年06月30日停止维护，所以最初的yum源已经失效，需要更换为国内的yum源。<br>以下为个人总结后的步骤：</p>
+<ol>
+<li>进入yum源目录<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd /etc/yum.repos.d/</span><br></pre></td></tr></table></figure></li>
+<li>备份原有的yum源(将CentOS-Base.repo重命名为CentOS-Base.repo.bak)<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mv CentOS-Base.repo CentOS-Base.repo.bak</span><br></pre></td></tr></table></figure></li>
+<li>下载国内的yum源(这里的为阿里云源)<br>在下载前先确定网络能够正常访问，否则会下载失败。<br>网络有关内容可以参考<a href="AboutCentosNetwork.md">网络配置</a><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget -O CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或者</span></span><br><span class="line">curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br></pre></td></tr></table></figure></li>
+<li>清除yum缓存<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum clean all</span><br></pre></td></tr></table></figure></li>
+<li>生成新的yum缓存<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum makecache</span><br></pre></td></tr></table></figure></li>
+<li>查看yum源是否更换成功<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum repolist</span><br></pre></td></tr></table></figure></li>
+</ol>
+<script src="https://giscus.app/client.js"
+        data-repo="gdjide/TheDiscussions"
+        data-repo-id="R_kgDONP3u_g"
+        data-category="Announcements"
+        data-category-id="DIC_kwDONP3u_s4CkTPz"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="transparent_dark"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>]]></content>
+      <categories>
+        <category>环境搭建</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Centos7的详细网络配置</title>
+    <url>/2024/11/15/Test/AboutCentosNetwork/</url>
+    <content><![CDATA[<h2 id="第一种连接模式：桥接模式（操作简单）"><a href="#第一种连接模式：桥接模式（操作简单）" class="headerlink" title="第一种连接模式：桥接模式（操作简单）"></a>第一种连接模式：桥接模式（操作简单）</h2><h3 id="1-在虚拟机开机前进行设置"><a href="#1-在虚拟机开机前进行设置" class="headerlink" title="1. 在虚拟机开机前进行设置"></a>1. 在虚拟机开机前进行设置</h3><p>在虚拟机设置中<span style="color: red;">网络适配器</span>下选择桥接模式，选中<span style="color: red;">复制物理网络连接状态</span>。<br><img src="https://pic-bed-6vd.pages.dev/img/net1.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="2-也可在虚拟机开机后进行设置"><a href="#2-也可在虚拟机开机后进行设置" class="headerlink" title="2. 也可在虚拟机开机后进行设置"></a>2. 也可在虚拟机开机后进行设置</h3><p>有时候在开机前设置完之后打开虚拟机网络又会变成NAT模式，很奇怪，所以可以在<br>开机后重新设置一下网络。<br><em>虚拟机右下角也可以找到网络设置</em><br><img src="https://pic-bed-6vd.pages.dev/img/net2.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br>选择桥接模式即可。</p>
+<h2 id="第二种连接模式：NAT模式（较复杂）"><a href="#第二种连接模式：NAT模式（较复杂）" class="headerlink" title="第二种连接模式：NAT模式（较复杂）"></a>第二种连接模式：NAT模式（较复杂）</h2><p>在运行虚拟机之后，打开虚拟机网络编辑器。<br><img src="https://pic-bed-6vd.pages.dev/img/net2.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br>选择<span style="color: red;">VMnet8</span>网络，没有的话创建一个。<br><img src="https://pic-bed-6vd.pages.dev/img/net3.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br><img src="https://pic-bed-6vd.pages.dev/img/net4.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br><img src="https://pic-bed-6vd.pages.dev/img/net5.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br><img src="https://pic-bed-6vd.pages.dev/img/net6.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br><img src="https://pic-bed-6vd.pages.dev/img/net7.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br>在虚拟机中输入</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br></pre></td></tr></table></figure>
+<p>进去后按 i 进入编辑模式<br>将BOOTPROTO&#x3D;dhcp 更改为   BOOTPROTO&#x3D;static<br>  ONBOOT&#x3D;no      更改为   ONBOOT&#x3D;yes</p>
+<p>添加以下内容</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">IPADDR=192.168.100.1 与虚拟机在相同网段</span><br><span class="line">NETMASK=255.255.255.0 固定值</span><br><span class="line">GATEWAY=192.168.100.2 必须与前面的“网关IP”相同</span><br><span class="line">DNS1=114.114.114.114</span><br><span class="line">DNS2=8.8.8.8</span><br></pre></td></tr></table></figure>
+<p>按Esc键退出编辑模式，输入 :wq 保存退出。<br><img src="https://pic-bed-6vd.pages.dev/img/net8.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br>重启网络服务</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl restart network</span><br></pre></td></tr></table></figure>
+<p>查看网络状态，查看IP地址</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ip addr</span><br></pre></td></tr></table></figure>
+<p>可以ping一下百度看看网络连接有无成功</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ping www.baidu.com</span><br><span class="line"></span><br><span class="line">使用ctrl + z 退出ping</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic-bed-6vd.pages.dev/img/net9.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<script src="https://giscus.app/client.js"
+        data-repo="gdjide/TheDiscussions"
+        data-repo-id="R_kgDONP3u_g"
+        data-category="Announcements"
+        data-category-id="DIC_kwDONP3u_s4CkTPz"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="transparent_dark"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>]]></content>
+      <categories>
+        <category>环境搭建</category>
       </categories>
   </entry>
   <entry>
@@ -47,77 +185,6 @@
 </script>]]></content>
       <categories>
         <category>软件分享</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Centos7的yum换源</title>
-    <url>/2024/11/13/Test/AboutCentos/</url>
-    <content><![CDATA[<p>由于Centos7在2024年06月30日停止维护，所以最初的yum源已经失效，需要更换为国内的yum源。<br>以下为个人总结后的步骤：</p>
-<ol>
-<li>进入yum源目录<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd /etc/yum.repos.d/</span><br></pre></td></tr></table></figure></li>
-<li>备份原有的yum源(将CentOS-Base.repo重命名为CentOS-Base.repo.bak)<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mv CentOS-Base.repo CentOS-Base.repo.bak</span><br></pre></td></tr></table></figure></li>
-<li>下载国内的yum源(这里的为阿里云源)<br>在下载前先确定网络能够正常访问，否则会下载失败。<br>网络有关内容可以参考<a href="AboutCentosNetwork.md">网络配置</a><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget -O CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或者</span></span><br><span class="line">curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br></pre></td></tr></table></figure></li>
-<li>清除yum缓存<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum clean all</span><br></pre></td></tr></table></figure></li>
-<li>生成新的yum缓存<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum makecache</span><br></pre></td></tr></table></figure></li>
-<li>查看yum源是否更换成功<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum repolist</span><br></pre></td></tr></table></figure></li>
-</ol>
-<script src="https://giscus.app/client.js"
-        data-repo="gdjide/TheDiscussions"
-        data-repo-id="R_kgDONP3u_g"
-        data-category="Announcements"
-        data-category-id="DIC_kwDONP3u_s4CkTPz"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="transparent_dark"
-        data-lang="zh-CN"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Centos7的详细网络配置</title>
-    <url>/2024/11/15/Test/AboutCentosNetwork/</url>
-    <content><![CDATA[<h2 id="第一种连接模式：桥接模式（操作简单）"><a href="#第一种连接模式：桥接模式（操作简单）" class="headerlink" title="第一种连接模式：桥接模式（操作简单）"></a>第一种连接模式：桥接模式（操作简单）</h2><h3 id="1-在虚拟机开机前进行设置"><a href="#1-在虚拟机开机前进行设置" class="headerlink" title="1. 在虚拟机开机前进行设置"></a>1. 在虚拟机开机前进行设置</h3><p>在虚拟机设置中<span style="color: red;">网络适配器</span>下选择桥接模式，选中<span style="color: red;">复制物理网络连接状态</span>。<br><img src="https://pic-bed-6vd.pages.dev/img/net1.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
-<h3 id="2-也可在虚拟机开机后进行设置"><a href="#2-也可在虚拟机开机后进行设置" class="headerlink" title="2. 也可在虚拟机开机后进行设置"></a>2. 也可在虚拟机开机后进行设置</h3><p>有时候在开机前设置完之后打开虚拟机网络又会变成NAT模式，很奇怪，所以可以在<br>开机后重新设置一下网络。<br><em>虚拟机右下角也可以找到网络设置</em><br><img src="https://pic-bed-6vd.pages.dev/img/net2.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br>选择桥接模式即可。</p>
-<h2 id="第二种连接模式：NAT模式（较复杂）"><a href="#第二种连接模式：NAT模式（较复杂）" class="headerlink" title="第二种连接模式：NAT模式（较复杂）"></a>第二种连接模式：NAT模式（较复杂）</h2><p>在运行虚拟机之后，打开虚拟机网络编辑器。<br><img src="https://pic-bed-6vd.pages.dev/img/net2.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br>选择<span style="color: red;">VMnet8</span>网络，没有的话创建一个。<br><img src="https://pic-bed-6vd.pages.dev/img/net3.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br><img src="https://pic-bed-6vd.pages.dev/img/net4.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br><img src="https://pic-bed-6vd.pages.dev/img/net5.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br><img src="https://pic-bed-6vd.pages.dev/img/net6.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br><img src="https://pic-bed-6vd.pages.dev/img/net7.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br>在虚拟机中输入</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br></pre></td></tr></table></figure>
-<p>进去后按 i 进入编辑模式<br>将BOOTPROTO&#x3D;dhcp 更改为   BOOTPROTO&#x3D;static<br>  ONBOOT&#x3D;no      更改为   ONBOOT&#x3D;yes</p>
-<p>添加以下内容</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">IPADDR=192.168.100.1 与虚拟机在相同网段</span><br><span class="line">NETMASK=255.255.255.0 固定值</span><br><span class="line">GATEWAY=192.168.100.2 必须与前面的“网关IP”相同</span><br><span class="line">DNS1=114.114.114.114</span><br><span class="line">DNS2=8.8.8.8</span><br></pre></td></tr></table></figure>
-<p>按Esc键退出编辑模式，输入 :wq 保存退出。<br><img src="https://pic-bed-6vd.pages.dev/img/net8.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br>重启网络服务</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl restart network</span><br></pre></td></tr></table></figure>
-<p>查看网络状态，查看IP地址</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ip addr</span><br></pre></td></tr></table></figure>
-<p>可以ping一下百度看看网络连接有无成功</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ping www.baidu.com</span><br><span class="line"></span><br><span class="line">使用ctrl + z 退出ping</span><br></pre></td></tr></table></figure>
-<p><img src="https://pic-bed-6vd.pages.dev/img/net9.png" alt="虚拟机设置"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
-<script src="https://giscus.app/client.js"
-        data-repo="gdjide/TheDiscussions"
-        data-repo-id="R_kgDONP3u_g"
-        data-category="Announcements"
-        data-category-id="DIC_kwDONP3u_s4CkTPz"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="transparent_dark"
-        data-lang="zh-CN"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
       </categories>
   </entry>
 </search>
