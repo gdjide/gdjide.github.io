@@ -1,3 +1,5 @@
+https://gdjide.github.io/2024/11/20/Programming/JavaWeb/
+https://gdjide.github.io/2024/11/20/Programming/StudentSystem/
 https://gdjide.github.io/2024/11/19/Programming/databases/
 https://gdjide.github.io/2024/11/15/Programming/sendmail/
 https://gdjide.github.io/2024/11/15/Test/AboutCentosNetwork/
