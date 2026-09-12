@@ -1,0 +1,15 @@
+{% flink [key] [col] %}
+[content]
+{% endflink %}
+
+[content]   : 可选参数。链接数据，格式为 yaml。
+[key]       : 可选参数。Hexo 数据文件的 key，如果 content 为空，则会加载指定 key 数据。[content] 和 [key] 需要二选一。
+[col]       : 可选参数。链接列宽 1-12 ，默认为 6
+
+
+{% note [type] [title] %}
+文字或者 `markdown` 均可
+{% endnote %} 
+
+[type]				: 可选参数。便签类型 info, tip, warning, danger, details
+[title]				: 可选参数。标题。

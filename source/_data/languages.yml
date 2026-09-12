@@ -1,0 +1,149 @@
+site:
+  title: 本站信息
+  webmaster: 网站名称
+  domain: 网站链接
+  avatar: 网站头像
+  describe: 网站简介
+  rule_text: 友链要求
+
+sidebar:
+  residence: Residence
+  city: City
+  age: Age
+  contact: 联系我
+
+footer:
+  powered: '由 %s 驱动'
+  theme: 主题
+  tips: '博客已运行 %s 天'
+  day: 天
+  hour: 时
+  minute: 分
+  seconds: 秒
+
+title:
+  links: 友情链接
+  new_publish: 最近发布
+  comment: 留言板
+  author: 作者
+  blog: 博客
+  privacy: 隐私权及评论
+  more: 查看分类
+  all_archives: 所有归档
+  year_archives: '%s 年的归档'
+  other_articles: 其他文章
+  unclassified: 未分类
+
+menu:
+  home: 首页
+  archives: 归档
+  links: 友链
+  about: 关于
+
+favicon:
+  show_text: (/≧▽≦/)咦！又好了！
+  hide_text: (●—●)喔哟，崩溃啦！
+
+search:
+  placeholder: 搜索文章...
+  result_placeholder: 请输入关键词进行搜索
+  empty: '找不到您查询的内容: ${query}'
+  hits: '找到 ${hits} 条结果'
+  hits_time: '找到 ${hits} 条结果（用时 ${time} 毫秒）'
+
+reward:
+  comment: 我很可爱，请给我钱
+
+post:
+  sticky: 置顶
+  more: 更多
+  copyright:
+    author: 本文作者
+    link: 本文链接
+    license_title: 版权声明
+    license_content: '本博客所有文章除特别声明外，均默认采用 %s 许可协议。'
+  copy:
+    success: 复制成功
+    failure: 复制失败
+  read_mode:
+    open: 进入阅读模式
+    exit: 退出阅读模式
+  notice_outdate_message: '距离上次更新已经 %s 天了, 文章内容可能已经过时。'
+  toc: 目录导航
+
+rightside:
+  toc_title: 目录
+  readmode_title: 阅读模式
+  back_to_top: 回到顶部
+  aside: 单栏和双栏切换
+
+date_suffix:
+  just: 刚刚
+  min: 分钟前
+  hour: 小时前
+  day: 天前
+  month: 个月前
+
+symbol:
+  comma: ，
+  period: 。
+  colon: ：
+
+ieTips: 为了更好的体验,请使用非IE浏览器
+
+not_found: 
+	name: 主页
+	text: 您正在查找的页面不存在。您是怎么到这里来的是个谜,但是您可以点击下面的按钮返回主页。
+
+
+
+
+
+layout:
+  path: layout # Folder path | 模板存放目录
+  # layout
+  main: _partial/main # 整体布局结构模板
+  header: _partial/header # 顶部菜单栏模板
+  banner: _partial/banner # 顶部横幅模板
+  sidebar: _partial/sidebar/index # 侧栏模板
+  footer: _partial/footer # 页脚模板
+  # post
+  post_info: _partial/post/post-info # 文章信息模板
+  post_content: _partial/post/post-content # 文章内容模板
+  reward: _partial/post/reward # 文章信息里打赏模板
+  post_copyright: _partial/post/post-copyright # 文章详情版权信息模板
+  post_next_prev: _partial/post/post-next-prev # 文章详情上下篇文章模板
+  post_card: _partial/post/post-card # 文章卡片信息模板
+  post_card_mini: _partial/post/post-card-mini # 文章卡片信息模板
+  # widget
+  header_logo: _widget/header-logo # 顶部菜单-logo部分
+  header_menu: _widget/header-menu # 顶部菜单-菜单部分
+  header_theme: _widget/header-theme # 顶部菜单-主题切换部分
+  header_search: _widget/header-search # 顶部菜单-查询部分
+  categorie: _widget/categorie # 分类卡片模板
+  paginator: _widget/paginator # 分页模板
+  fixed_btn: _widget/fixed-btn # 固定按钮模板
+  post_toc: _widget/post-toc # 文章目录
+  about_card: _widget/about-card # 关于页面配置卡片模板
+  search: _widget/search # 搜索卡片模板 v2.1.11 +
+  sidebar_user: _partial/sidebar/card/user # 侧栏 - 用户头像模板
+  sidebar_social: _partial/sidebar/card/social # 侧栏 - 社交图标模块
+  sidebar_info: _partial/sidebar/card/info # 侧栏 - 用户信息模块
+  sidebar_email: _partial/sidebar/card/email # 侧栏 - 邮件模块
+  # third-party
+  comment: _third-party/comment/index # 评论插件模板
+  analytics: _third-party/web-analytics # 统计模板
+  # animation
+  page_loading: _partial/preloader/page-preloader # 页面切换动画模板
+  mode_change: _partial/preloader/change-mode-preloader # 主题切换动画模板
+  # page
+  page_about: _partial/page/about # 关于页面模块
+  page_archive: _partial/page/archive # 归档页面模块
+  page_category: _partial/page/category # 分类页面模块
+  page_index: _partial/page/index # 首页页面模块
+  page_links: _partial/page/links # 友链页面模块
+  page_post: _partial/page/post # 文章详情页面模块
+  page_tag: _partial/page/tag # 标签页面模块
+  # other
+  script: _partial/script # 脚本块 v2.1.11 +
+  head: _partial/head # head块 v2.1.11 +

@@ -1,0 +1,132 @@
+user:
+  toc: false
+  name: 妙羽
+  first_name: 羽
+  last_name: 妙
+  email: 暂不公开
+  domain: https://gdjide.github.io/
+  avatar: https://pic-bed-6vd.pages.dev/img/gj.jpg
+  describe: 个人整理博客
+
+favicon:
+  logo: log.svg
+  icon16: log.svg
+  icon32: log.svg
+  apple_touch_icon: log.svg
+  webmanifest: /site.webmanifest
+  visibilitychange: false
+  hidden: log.svg
+  show_text: ╰(*°▽°*)╯睡醒了！
+  hide_text: (●—●)不看我了是吧，我直接睡觉！
+
+assets:
+  third_party_provider: https://npm.elemecdn.com
+
+sidebar:
+  typed_text_prefix: 一名
+  typed_text: ["兴趣使然的领域探索者","摸鱼大师"]
+  social: # 社交地址
+    - name: github
+      icon: fab fa-github
+      url: https://github.com/gdjide
+  info: # 个人信息
+    - key: 地址
+      val: 咒术高专
+    - key: 领域展开
+      val: Ctrl C + V！
+    - key: 年龄
+      val: 21
+      
+top_bars:
+  - title: 首页
+    url: /
+  - title: 分类
+    url: /categories/
+  # - title: 项目
+  #   url: /project/
+  - title: 壁纸
+    url: /photo/
+  - title: 友情连接
+    url: /links/
+  - title: 关于
+    url: /about/
+  - title: 归档
+    url: /archives/
+
+banner:
+  index:
+    type: video
+    bgurl: https://pic-bed-6vd.pages.dev/img/bg.mp4
+    banner_title: 东边日出西边雨，<br>道是无晴却有晴。
+    banner_text: Hi my new friend!
+    danmu: 
+    enable: true
+    avatar: true
+    delayRange: 5000
+    speed: 80
+
+highlight:
+  theme: true
+  title: mac
+  copy: true
+  lang: false
+  code_word_wrap: true
+  height_limit: 200 # 超出时，显示折叠按钮
+
+cover:
+  type: random
+  default: 
+    - https://pic-bed-6vd.pages.dev/img/fm1.webp
+    - https://pic-bed-6vd.pages.dev/img/fm2.webp
+    - https://pic-bed-6vd.pages.dev/img/fm3.webp
+    - https://pic-bed-6vd.pages.dev/img/fm4.webp
+    - https://pic-bed-6vd.pages.dev/img/fm5.webp
+    - https://pic-bed-6vd.pages.dev/img/fm6.webp
+    - https://pic-bed-6vd.pages.dev/img/fm7.webp
+    - https://pic-bed-6vd.pages.dev/img/fm8.webp
+    - https://pic-bed-6vd.pages.dev/img/fm9.webp
+
+footer:
+  powered:
+    enable: true
+  live_time:
+    enable: true
+    prefix: '冒烟运行 %s 天'
+    start_time: 2024/11/12 13:00:00
+  custom_text:
+
+categorie_card:
+  enable: true
+  len: 2
+  list: ["学习备忘笔记","环境搭建"]
+
+about:
+  insert: none # 插入规则 before（插入在内容前） | after（插入在内容后） | none（不插入）
+  title: 关于我 # 标题
+  introduction: 你好，我是妙羽，很高兴你能够发现这个网站，建立blog的初衷是分享学习笔记，以及一些有趣的软件、图片等。 # 个人简单描述
+
+not_found: 
+	path:  / # 点击按钮跳转地址
+	name:  返回主页 # 按钮显示文案
+	text:  未找到资源，请返回主页。 # 提示文案
+
+toc:
+    enable: true
+    number: true
+    max_depth: 3
+    collapsed: false
+    scroll_active: true
+	
+baidu_push: true
+
+search:
+  enable: true
+  type: local
+
+post_pagination:
+  enable: true
+  type: small
+
+rightside:
+  readmode: true
+  aside: true
