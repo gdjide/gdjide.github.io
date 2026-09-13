@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="ERP系统部署流程前言下载完安装包后进行解压。 一、后端编译将文件夹中的 jshERP-boot 文件夹在 IDEA 中打开，运行 Maven 的生存期的 package。 常见问题及解决办法： Lombok 与 Java 版本不符  解决办法：该程序自带 Java 版本为 22，升级 Lombok 版本，将版本改为 1.18.30 后 Maven 重新同步项目即可。   Maven 插件或依赖项">
+<meta property="og:type" content="article">
+<meta property="og:title" content="erp项目的部署">
+<meta property="og:url" content="https://gdjide.github.io/2026/05/15/Programming/projectrun/index.html">
+<meta property="og:site_name" content="jideblog">
+<meta property="og:description" content="ERP系统部署流程前言下载完安装包后进行解压。 一、后端编译将文件夹中的 jshERP-boot 文件夹在 IDEA 中打开，运行 Maven 的生存期的 package。 常见问题及解决办法： Lombok 与 Java 版本不符  解决办法：该程序自带 Java 版本为 22，升级 Lombok 版本，将版本改为 1.18.30 后 Maven 重新同步项目即可。   Maven 插件或依赖项">
+<meta property="og:locale">
+<meta property="og:image" content="https://gdjide.github.io/img/404.jpg">
+<meta property="article:published_time" content="2026-05-15T01:43:02.120Z">
+<meta property="article:modified_time" content="2026-05-19T02:48:37.120Z">
+<meta property="article:author" content="jide">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gdjide.github.io/img/404.jpg">
+
+
+<title >erp项目的部署</title>
+
+<!-- Favicon -->
+
+    <link href='/log.svg?v=2.2.4' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/log.svg?v=2.2.4' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/log.svg?v=2.2.4' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+    <link href='/site.webmanifest' rel='manifest' ></link>
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"gdjide.github.io","author":"jide","root":"/","typed_text":["兴趣使然的领域探索者","摸鱼大师"],"theme_version":"2.2.4","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"log.svg","icon16":"log.svg","icon32":"log.svg","apple_touch_icon":"log.svg","webmanifest":"/site.webmanifest","visibilitychange":false,"hidden":"log.svg","show_text":"╰(*°▽°*)╯睡醒了！","hide_text":"(●—●)不看我了是吧，我直接睡觉！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://npm.elemecdn.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":false,"title":"mac","height_limit":200},"toc":{"post_title":true},"live_time":{"start_time":"2024/11/12 13:00:00","prefix":"冒烟运行 undefined 天"},"danmu":{"enable":false,"el":".trm-banner"},"covers":["https://pic-bed-6vd.pages.dev/img/fm1.webp","https://pic-bed-6vd.pages.dev/img/fm2.webp","https://pic-bed-6vd.pages.dev/img/fm3.webp","https://pic-bed-6vd.pages.dev/img/fm4.webp","https://pic-bed-6vd.pages.dev/img/fm5.webp","https://pic-bed-6vd.pages.dev/img/fm6.webp","https://pic-bed-6vd.pages.dev/img/fm7.webp","https://pic-bed-6vd.pages.dev/img/fm8.webp","https://pic-bed-6vd.pages.dev/img/fm9.webp"],"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.xml"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-05-19 10:48:37"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.4" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/log.svg">
+    
+    
+        <div class="trm-logo-text">
+            妙<span>羽</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    首页
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/categories/" target="">
+                    分类
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/photo/" target="">
+                    壁纸
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/links/" target="">
+                    友情连接
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    关于
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <i class="iconfont fas fa-search"></i>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="https://pic-bed-6vd.pages.dev/img/bg2.webp">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-12">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text trm-text-center ">
+                        <div class="trm-label trm-mb-20">
+                            
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            erp项目的部署
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2026
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+            <div class="trm-page-content col-lg-12">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            05/15
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            09:43
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            jide
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="ERP系统部署流程"><a href="#ERP系统部署流程" class="headerlink" title="ERP系统部署流程"></a>ERP系统部署流程</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>下载完安装包后进行解压。</p>
+<h2 id="一、后端编译"><a href="#一、后端编译" class="headerlink" title="一、后端编译"></a>一、后端编译</h2><p>将文件夹中的 <code>jshERP-boot</code> 文件夹在 IDEA 中打开，运行 Maven 的生存期的 <code>package</code>。<br><img src="https://pic-bed-6vd.pages.dev/img/erp1.png" alt="erp"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="常见问题及解决办法："><a href="#常见问题及解决办法：" class="headerlink" title="常见问题及解决办法："></a>常见问题及解决办法：</h3><ol>
+<li><p><strong>Lombok 与 Java 版本不符</strong></p>
+<ul>
+<li>解决办法：该程序自带 Java 版本为 22，升级 Lombok 版本，将版本改为 1.18.30 后 Maven 重新同步项目即可。</li>
+</ul>
+</li>
+<li><p><strong>Maven 插件或依赖项等爆红</strong></p>
+<ul>
+<li>解决办法：网络问题，Maven 设置里更改 Maven 主路径进行重新下载，下载后再改回 IDEA 自带版本（或者自己下载的版本）。</li>
+</ul>
+</li>
+</ol>
+<h3 id="编译结果"><a href="#编译结果" class="headerlink" title="编译结果"></a>编译结果</h3><p>后端编译后会在根目录下生成 <code>dist</code> 文件夹，文件夹下有 <code>jshERP-bin.zip</code> 压缩包。</p>
+<h2 id="二、前端编译"><a href="#二、前端编译" class="headerlink" title="二、前端编译"></a>二、前端编译</h2><p>将文件夹中的 <code>jshERP-web</code> 文件夹在 VSCode（推荐）中打开，如果根目录下无 <code>node_modules</code> 文件夹，那么说明没有安装依赖。</p>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p>下载 Node.js，版本为 <strong>16.20.2</strong>（版本太高无法运行）。</p>
+<h3 id="依赖安装"><a href="#依赖安装" class="headerlink" title="依赖安装"></a>依赖安装</h3><ol>
+<li><p><strong>使用淘宝镜像安装</strong>（推荐）</p>
+<ul>
+<li>一次性使用：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure></li>
+<li>永久使用淘宝镜像：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>处理依赖版本冲突</strong></p>
+<ul>
+<li>ERP（jsh-erp-web）的 <code>package.json</code> 中依赖版本比较旧，即使换了 Node16，npm 默认的严格检查机制依然会拦截 <code>css-loader</code> 和 <code>webpack</code> 的版本冲突。</li>
+<li>使用以下命令即可正常安装：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --legacy-peer-deps</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>构建项目</strong></p>
+<ul>
+<li>在 <code>package.json</code> 下选中 <code>build</code>，如有依赖会正常显示运行脚本，点击运行。</li>
+</ul>
+</li>
+</ol>
+<h3 id="编译结果-1"><a href="#编译结果-1" class="headerlink" title="编译结果"></a>编译结果</h3><p>运行成功之后同样会在根目录下创建 <code>dist</code> 文件夹，将该文件夹压缩为 <code>dist.zip</code>。</p>
+<h2 id="三、整合前后端文件"><a href="#三、整合前后端文件" class="headerlink" title="三、整合前后端文件"></a>三、整合前后端文件</h2><ol>
+<li>创建新文件夹 <code>jshERP</code></li>
+<li>将两个压缩文件（<code>jshERP-bin.zip</code> 和 <code>dist.zip</code>）移动到该文件夹内</li>
+<li>再将 <code>jshERP</code> 文件夹压缩为 <code>jshERP.zip</code></li>
+<li>后续会使用到</li>
+</ol>
+<h2 id="四、环境搭建（Linux-系统）"><a href="#四、环境搭建（Linux-系统）" class="headerlink" title="四、环境搭建（Linux 系统）"></a>四、环境搭建（Linux 系统）</h2><p>自己使用可以使用 VMware 虚拟机创建 Linux 系统，这里演示使用购买的服务器进行搭建，步骤都一样。</p>
+<h3 id="安装宝塔面板"><a href="#安装宝塔面板" class="headerlink" title="安装宝塔面板"></a>安装宝塔面板</h3><p>下载宝塔面板（9.6.0 版本）（便于环境的搭建）。</p>
+<ul>
+<li>在终端中粘贴执行（确保服务器或虚拟机网络正常）</li>
+<li>输入 <code>y</code> 确认安装</li>
+</ul>
+<h4 id="可能问题"><a href="#可能问题" class="headerlink" title="可能问题"></a>可能问题</h4><ul>
+<li>使用的用户并非管理员用户，可以在命令前加入 <code>sudo</code>（将普通用户使用超级管理员权限）。</li>
+</ul>
+<p>安装时间较长，安装完成后会显示面板账户登录信息（一定记住密码，虽然后续可更改）。</p>
+<ul>
+<li>服务器使用 IPv4 面板地址访问（需要在服务器中放行端口号）</li>
+<li>虚拟机使用内网面板访问</li>
+</ul>
+<p>进入宝塔面板登录，首次登录没有宝塔账户可注册。</p>
+<h3 id="下载环境组件"><a href="#下载环境组件" class="headerlink" title="下载环境组件"></a>下载环境组件</h3><p>只需下载 Nginx 与 MySQL，其他用不到，点击一键安装。</p>
+<ul>
+<li>点击软件商店，下载 Redis</li>
+<li>点击网站，选择上方的 JAVA 项目，在 Java 环境管理中选择 JDK 管理，选择安装 1.8 版本的 JDK</li>
+<li>点击文件，将先前的 <code>jshERP.zip</code> 压缩包上传到宝塔面板，然后解压</li>
+<li>再将文件夹内的 <code>jshERP-bin.zip</code> 和 <code>dist.zip</code> 进行解压</li>
+</ul>
+<h3 id="正式的环境搭建"><a href="#正式的环境搭建" class="headerlink" title="正式的环境搭建"></a>正式的环境搭建</h3><h4 id="1-添加数据库"><a href="#1-添加数据库" class="headerlink" title="1. 添加数据库"></a>1. 添加数据库</h4><p>点击数据库，点击添加数据库，输入数据库名之后点击确定。</p>
+<h5 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h5><p>会显示：<code>127.0.0.1 状态：root 用户连接失败，请尝试重置数据库 root 密码后重新添加。</code></p>
+<ul>
+<li>该问题是由于第一次添加数据库，只需点击添加数据库旁的「root 密码」，再重新添加数据库即可。</li>
+</ul>
+<h4 id="2-导入数据库"><a href="#2-导入数据库" class="headerlink" title="2. 导入数据库"></a>2. 导入数据库</h4><p>点击导入，点击从本机导入，选择解压出来的数据库文件，路径一般为 <code>……/jshERP/docs/jsh_erp.sql</code>。</p>
+<h4 id="3-修改配置文件"><a href="#3-修改配置文件" class="headerlink" title="3. 修改配置文件"></a>3. 修改配置文件</h4><p>复制刚才的数据库密码，然后进入 <code>/jshERP/config/application.properties</code> 文件，修改数据库地址以及账户密码。</p>
+<h4 id="4-复制-Java-路径"><a href="#4-复制-Java-路径" class="headerlink" title="4. 复制 Java 路径"></a>4. 复制 Java 路径</h4><p>进入 <code>/jshERP/bin/run-manage.sh</code> 文件，修改 Java 地址。</p>
+<h4 id="5-启动后端"><a href="#5-启动后端" class="headerlink" title="5. 启动后端"></a>5. 启动后端</h4><p>进入 <code>/jshERP</code> 根目录，点击终端，输入命令 <code>./start.sh</code> 启动，显示 <code>success</code> 启动成功。</p>
+<h4 id="6-启动-Web-端"><a href="#6-启动-Web-端" class="headerlink" title="6. 启动 Web 端"></a>6. 启动 Web 端</h4><ul>
+<li>点击网站，选择上方的 HTML 项目，点击添加 HTML 项目，在绑定域名中输入服务器 ip 地址即可，根目录选择之前的 <code>dist</code>。</li>
+<li>继续点击后方的设置按钮，点击配置文件。</li>
+<li>在该处输入内容，将需要服务端处理的请求转发到服务端：<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">location</span> /jshERP-boot/ &#123;</span><br><span class="line">      <span class="attribute">proxy_pass</span> http://localhost:9999/jshERP-boot/;</span><br><span class="line">      <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>:<span class="variable">$server_port</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="7-打开网站"><a href="#7-打开网站" class="headerlink" title="7. 打开网站"></a>7. 打开网站</h4><p>复制地址即可进入。</p>
+<p><strong>测试用户：</strong></p>
+<ul>
+<li>用户名：<code>jsh</code>，密码：<code>123456</code></li>
+<li>管理员：<code>admin</code>，密码：<code>123456</code></li>
+</ul>
+<hr>
+<h2 id="关机后重新启动-ERP-系统流程"><a href="#关机后重新启动-ERP-系统流程" class="headerlink" title="关机后重新启动 ERP 系统流程"></a>关机后重新启动 ERP 系统流程</h2><p>管理员用户可直接使用命令，否则在使用命令前加入 <code>sudo</code>。</p>
+<ol>
+<li>使用命令 <code>bt</code></li>
+<li>显示宝塔面板，再次输入 <code>14</code>，查看宝塔面板的地址与用户名（密码不可见），可自行更改密码。</li>
+<li>进入宝塔面板</li>
+<li>在文件中 <code>jshERP</code> 终端输入启动命令 <code>./start.sh</code> 启动</li>
+<li>进入网站</li>
+</ol>
+<h3 id="可能问题-1"><a href="#可能问题-1" class="headerlink" title="可能问题"></a>可能问题</h3><p>如果输入关闭命令 <code>./stop.sh</code> 可能会导致之前的配置信息重置，只需重新填写即可（数据库地址、Java 路径）。</p>
+
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-older-publications-card trm-scroll-animation trm-active-el">
+        <div class="trm-older-publication">
+            
+            <a class="trm-op-top trm-anima-link" href="/2024/11/20/Programming/JavaWeb/">
+                <span class="trm-op-cover">
+                    <img alt="cover" class="no-fancybox" src="https://pic-bed-6vd.pages.dev/img/fm8.webp">
+                </span>
+                <h6 class="trm-op-title">JavaWeb的一些常见方法</h6>
+            </a>
+            <div class="trm-divider trm-mb-15 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/11/20</li>
+                <li>09:01</li>
+                <li>学习备忘笔记</li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.2.4
+            </span>
+        </div>
+      
+
+    
+        <div class="trm-footer-item blog-run-long"></div>
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="ERP系统部署流程"><a rel="nofollow" class="trm-toc-link" href="#ERP系统部署流程"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">ERP系统部署流程</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="前言"><a rel="nofollow" class="trm-toc-link" href="#前言"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">前言</span></a></li><li class="trm-toc-item trm-toc-level-2" title="一、后端编译"><a rel="nofollow" class="trm-toc-link" href="#一、后端编译"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">一、后端编译</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="常见问题及解决办法："><a rel="nofollow" class="trm-toc-link" href="#常见问题及解决办法："><span class="trm-toc-number">1.2.1.</span> <span class="trm-toc-text">常见问题及解决办法：</span></a></li><li class="trm-toc-item trm-toc-level-3" title="编译结果"><a rel="nofollow" class="trm-toc-link" href="#编译结果"><span class="trm-toc-number">1.2.2.</span> <span class="trm-toc-text">编译结果</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="二、前端编译"><a rel="nofollow" class="trm-toc-link" href="#二、前端编译"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">二、前端编译</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="环境准备"><a rel="nofollow" class="trm-toc-link" href="#环境准备"><span class="trm-toc-number">1.3.1.</span> <span class="trm-toc-text">环境准备</span></a></li><li class="trm-toc-item trm-toc-level-3" title="依赖安装"><a rel="nofollow" class="trm-toc-link" href="#依赖安装"><span class="trm-toc-number">1.3.2.</span> <span class="trm-toc-text">依赖安装</span></a></li><li class="trm-toc-item trm-toc-level-3" title="编译结果"><a rel="nofollow" class="trm-toc-link" href="#编译结果-1"><span class="trm-toc-number">1.3.3.</span> <span class="trm-toc-text">编译结果</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="三、整合前后端文件"><a rel="nofollow" class="trm-toc-link" href="#三、整合前后端文件"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">三、整合前后端文件</span></a></li><li class="trm-toc-item trm-toc-level-2" title="四、环境搭建（Linux 系统）"><a rel="nofollow" class="trm-toc-link" href="#四、环境搭建（Linux-系统）"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">四、环境搭建（Linux 系统）</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="安装宝塔面板"><a rel="nofollow" class="trm-toc-link" href="#安装宝塔面板"><span class="trm-toc-number">1.5.1.</span> <span class="trm-toc-text">安装宝塔面板</span></a></li><li class="trm-toc-item trm-toc-level-3" title="下载环境组件"><a rel="nofollow" class="trm-toc-link" href="#下载环境组件"><span class="trm-toc-number">1.5.2.</span> <span class="trm-toc-text">下载环境组件</span></a></li><li class="trm-toc-item trm-toc-level-3" title="正式的环境搭建"><a rel="nofollow" class="trm-toc-link" href="#正式的环境搭建"><span class="trm-toc-number">1.5.3.</span> <span class="trm-toc-text">正式的环境搭建</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="关机后重新启动 ERP 系统流程"><a rel="nofollow" class="trm-toc-link" href="#关机后重新启动-ERP-系统流程"><span class="trm-toc-number">1.6.</span> <span class="trm-toc-text">关机后重新启动 ERP 系统流程</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="可能问题"><a rel="nofollow" class="trm-toc-link" href="#可能问题-1"><span class="trm-toc-number">1.6.1.</span> <span class="trm-toc-text">可能问题</span></a></li></ol></li></ol></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+    <div class="trm-search-popup">
+        <div class="trm-search-wrapper">
+            <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <i class="iconfont fas fa-search"></i>
+                </div>
+                <input class="trm-search-input" type="text" placeholder="搜索文章...">
+                <div class="trm-search-btn-close">
+                    <i class="iconfont fas fa-times"></i>
+                </div>
+            </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    请输入关键词进行搜索
+                </div>
+            </div>
+            <div class="trm-search-footer">
+                <div class="trm-search-stats"></div>
+                <ul class="trm-search-commands">
+                    <li>
+                        <kbd class="command-palette-commands-key">
+                            <svg width="15" height="15" aria-label="Escape key" role="img">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.2">
+                                    <path
+                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
+                                    </path>
+                                </g>
+                            </svg>
+                        </kbd>
+                        <span class="command-palette-Label">to close</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.2.4"></script>
+    
+
+    
+        
+<script src="https://npm.elemecdn.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=2.2.4"></script>
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+    <script data-swup-reload-script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+
+
+<script id="async-script" src="/js/main.js?v=2.2.4"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>
